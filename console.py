@@ -1,5 +1,6 @@
 from persons import Gerontologian, Patient
 from utils.headers import Headers
+from assessments import MultidimensionalEvaluation
 import time
 
 
@@ -44,3 +45,8 @@ class PatientPeople:
         patient = Patient(name, birth, sex, marital_status, schooling, ocupation, home_with,
                           income, bpc, b_religion, religion_name)
         confirm = input('Ficha de %s, confirmar? (S / N)' % patient.p_name)
+
+        if confirm.upper() == 'N':
+            exit()
+        else:
+            MultidimensionalEvaluation.questions_and_answers()
