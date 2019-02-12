@@ -19,4 +19,4 @@ class Patient:
         self.p_religion = b_religion
         self.p_religion_name = religion_name
         self.p_score_attitudes_aging = None
-        self.p_score_quality_life = None
+        self.p_score_quality_life = []

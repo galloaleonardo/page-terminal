@@ -10,7 +10,7 @@ class StartApplication:
         Headers.title_header()
         GerontologianPeople.get_gerontologian()
         print('Vamos iniciar com o cadastro do paciente... \n')
-        time.sleep(3)
+        time.sleep(1.5)
         PatientPeople.get_patient()
 
 
@@ -49,4 +49,6 @@ class PatientPeople:
         if confirm.upper() == 'N':
             exit()
         else:
-            MultidimensionalEvaluation.questions_and_answers()
+            MultidimensionalEvaluation.questions_and_answers(patient)
+            print(str(patient.p_score_quality_life))
+            print(str(patient.p_score_attitudes_aging))
