@@ -26,3 +26,7 @@ class MakeReportPatient:
     def write_quality_issues(self, lines):
         self.lines_quality = lines
         self.f.write(lines)
+
+    def write_header(self, lines_g, lines_p):
+        self.f.write(lines_g)
+        self.f.write(lines_p)

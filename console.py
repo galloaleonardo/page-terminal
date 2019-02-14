@@ -8,10 +8,12 @@ class StartApplication:
     @staticmethod
     def init_app():
         Headers.title_header()
-        GerontologianPeople.get_gerontologian()
+        people = Peoples()
+        people.gerontologian = GerontologianPeople.get_gerontologian()
         print('Vamos iniciar com o cadastro do paciente... \n')
         time.sleep(1.5)
-        PatientPeople.get_patient()
+        people.patient = PatientPeople.get_patient()
+        MultidimensionalEvaluation.questions_and_answers(people.gerontologian, people.patient)
 
 
 class GerontologianPeople:
@@ -23,8 +25,9 @@ class GerontologianPeople:
         if confirm.upper() == 'S':
             gerontologian = Gerontologian(name, abg)
             print('Bem vindo(a), %s.' % gerontologian.g_name)
+            return gerontologian
         else:
-            pass
+            exit()
 
 
 class PatientPeople:
@@ -46,9 +49,21 @@ class PatientPeople:
                           income, bpc, b_religion, religion_name)
         confirm = input('Ficha de %s, confirmar? (S / N)' % patient.p_name)
 
-        if confirm.upper() == 'N':
-            exit()
+        if confirm.upper() == 'S':
+            return patient
         else:
-            MultidimensionalEvaluation.questions_and_answers(patient)
-            print(str(patient.p_score_quality_life))
-            print(str(patient.p_score_attitudes_aging))
+            exit()
+
+
+
+class Peoples:
+    def __init__(self):
+        self.gerontologian = None
+        self.patient = None
+
+    def get_gerontologian(self, gerontologian):
+        self.gerontologian = gerontologian
+
+    def get_patient(self, patient):
+        self.patient = patient
+
