@@ -1,27 +1,22 @@
 from utils import utils
 from questions_pattern import questions
-from assessments_writer import AssessmentsWriterFile
 
 
 class AttitudesAging:
-    a_question_1 = None
-    a_question_2 = None
-    a_question_3 = None
-
-    def attitude_issues(self):
+    @staticmethod
+    def attitude_issues(patient):
         utils.line_break()
         print('A) ATITUDES EM RELAÇÄO A VELHICE E ENVELHECIMENTO.')
-        self.a_question_1 = input(questions.QuestionsAttitudesAging.QUESTION_1)
-        self.a_question_2 = input(questions.QuestionsAttitudesAging.QUESTION_2)
-        self.a_question_3 = input(questions.QuestionsAttitudesAging.QUESTION_3)
-        return self.a_question_3
+        a_question_1 = input(questions.QuestionsAttitudesAging.QUESTION_1)
+        a_question_2 = input(questions.QuestionsAttitudesAging.QUESTION_2)
+        a_question_3 = input(questions.QuestionsAttitudesAging.QUESTION_3)
+        patient.p_score_attitudes_aging = a_question_3
 
 
 class QualityLife:
     @staticmethod
     def quality_issues(patient):
         utils.line_break()
-
         print('B) QUALIDADE DE VIDA.')
         q_question_1 = input(questions.QuestionsQualityLife.QUESTION_1)
         q_question_1_1 = input(questions.QuestionsQualityLife.QUESTION_1_1)
@@ -73,15 +68,10 @@ class QualityLife:
 
 class MultidimensionalEvaluation:
     @staticmethod
-    def questions_and_answers(gerontologian, patient):
-        report = AssessmentsWriterFile()
-        report.inicializate_write(gerontologian, patient)
-        report.header_file_gerontologian(gerontologian)
-        report.header_file_patient(patient)
-
+    def questions_and_answers(patient):
         attitudes = AttitudesAging()
         attitudes.attitude_issues(patient)
 
-        patient.p_score_attitudes_aging = attitudes.a_question_3
         quality_life = QualityLife()
         quality_life.quality_issues(patient)
+

@@ -8,17 +8,16 @@ class StartApplication:
     @staticmethod
     def init_app():
         Headers.title_header()
-        people = Peoples()
-        people.gerontologian = GerontologianPeople.get_gerontologian()
+        gerontologian = GerontologianPeople.input_gerontologian()
         print('Vamos iniciar com o cadastro do paciente... \n')
-        time.sleep(1.5)
-        people.patient = PatientPeople.get_patient()
-        MultidimensionalEvaluation.questions_and_answers(people.gerontologian, people.patient)
+        time.sleep(1)
+        patient = PatientPeople.get_patient()
+        MultidimensionalEvaluation.questions_and_answers(patient)
 
 
 class GerontologianPeople:
     @staticmethod
-    def get_gerontologian():
+    def input_gerontologian():
         name = input('Olá gerontologo(a), digite o seu nome: ')
         abg = input('%s, qual seu númedo da ABG? ' % name)
         confirm = input('Nome: %s | Num. ABG: %s. Podemos confirmar o cadastro (S / N)? ' % (name, abg))
@@ -53,17 +52,3 @@ class PatientPeople:
             return patient
         else:
             exit()
-
-
-
-class Peoples:
-    def __init__(self):
-        self.gerontologian = None
-        self.patient = None
-
-    def get_gerontologian(self, gerontologian):
-        self.gerontologian = gerontologian
-
-    def get_patient(self, patient):
-        self.patient = patient
-

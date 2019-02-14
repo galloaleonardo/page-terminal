@@ -1,7 +1,7 @@
 class QuestionsAttitudesAging:
     QUESTION_1 = '1. Que idade o(a) senhor(a) sente ter? Por quê? '
     QUESTION_2 = '2. Existe pontos positivos e negativos presentes nessa fase da vida? Quais? '
-    QUESTION_3 = 'Você gerontologo(a), como classificaria as respostas acima? (0) Ruim | (1) Mediana | (2) Boa -> '
+    QUESTION_3 = '3. Você gerontologo(a), como classificaria as respostas acima? (0) Ruim | (1) Mediana | (2) Boa -> '
 
 
 class QuestionsQualityLife:
