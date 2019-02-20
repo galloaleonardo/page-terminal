@@ -1,22 +1,37 @@
-class Gerontologian:
-    def __init__(self, name, num_abg):
-        self.g_name = name
-        self.g_num_abg = num_abg
+class Person:
+    def __init__(self, primary_name, last_name):
+        self._primary_name = primary_name
+        self._last_name = last_name
+
+    @property
+    def full_name(self):
+        return '{} {}'.format(self._primary_name, self._last_name)
 
 
-class Patient:
-    def __init__(self, name, birth, sex, marital_status, schooling, ocupation,
-                 home_with, income, bpc, b_religion, religion_name):
-        self.p_name = name
-        self.p_birth = birth
-        self.p_sex = sex
-        self.p_marital_status = marital_status
-        self.p_schooling = schooling
-        self.p_ocupation = ocupation
-        self.p_home_with = home_with
-        self.p_income = income
-        self.p_bpc = bpc
-        self.p_religion = b_religion
-        self.p_religion_name = religion_name
-        self.p_score_attitudes_aging = None
-        self.p_score_quality_life = []
+class Gerontologian(Person):
+    def __init__(self, primary_name, las_name, num_membership_abg, service_institution,
+                 is_elderly_interviewee, evaluation_date):
+        super().__init__(primary_name, las_name)
+        self._num_membership_abg = num_membership_abg
+        self._service_institution = service_institution
+        self._is_elderly_interviewee = is_elderly_interviewee
+        self._evaluation_date = evaluation_date
+
+
+class Patient(Person):
+    def __init__(self, primary_name, last_name, adress, telephone, date_birth,
+                 age, genre, marital_status, scholarity, individual_income,
+                 family_income, live_with, have_relegion):
+        super().__init__(primary_name, last_name)
+        self._adress = adress
+        self._telephone = telephone
+        self._date_birth = date_birth
+        self._age = age
+        self._genre = genre
+        self._marital_status = marital_status
+        self._scholarity = scholarity
+        self._individual_income = individual_income
+        self._family_income = family_income
+        self._live_with = live_with
+        self._have_religion = have_relegion
+
