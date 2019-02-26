@@ -1,77 +1,112 @@
-from utils import utils
 from questions_pattern import questions
+from utils import utils
 
 
 class AttitudesAging:
     @staticmethod
-    def attitude_issues(patient):
-        utils.line_break()
-        print('A) ATITUDES EM RELAÇÄO A VELHICE E ENVELHECIMENTO.')
-        a_question_1 = input(questions.QuestionsAttitudesAging.QUESTION_1)
-        a_question_2 = input(questions.QuestionsAttitudesAging.QUESTION_2)
-        a_question_3 = input(questions.QuestionsAttitudesAging.QUESTION_3)
-        patient.p_score_attitudes_aging = a_question_3
+    def attitude_issues():
+        print('{}{}A) Atitudes em relação a velhice e envelhecimento: {}'.
+              format(utils.Color.BOLD, utils.Color.BLUE, utils.Color.END))
+        count_score = 0
+
+        for key, value in questions.QuestionsAttitudesAging.questions_answers_attitudes_agging.items():
+            answer = input(key)
+            utils.line_break()
+            questions.QuestionsAttitudesAging.questions_answers_attitudes_agging[key] = answer
+
+            try:
+                count_score += int(answer)
+            except ValueError:
+                pass
+
+        return count_score
 
 
 class QualityLife:
     @staticmethod
-    def quality_issues(patient):
-        utils.line_break()
-        print('B) QUALIDADE DE VIDA.')
-        q_question_1 = input(questions.QuestionsQualityLife.QUESTION_1)
-        q_question_1_1 = input(questions.QuestionsQualityLife.QUESTION_1_1)
-        utils.line_break()
-        q_question_2 = input(questions.QuestionsQualityLife.QUESTION_2)
-        q_question_2_1 = input(questions.QuestionsQualityLife.QUESTION_2_1)
-        utils.line_break()
-        q_question_3 = input(questions.QuestionsQualityLife.QUESTION_3)
-        q_question_3_1 = input(questions.QuestionsQualityLife.QUESTION_3_1)
-        utils.line_break()
-        q_question_4 = input(questions.QuestionsQualityLife.QUESTION_4)
-        utils.line_break()
-        q_question_5 = input(questions.QuestionsQualityLife.QUESTION_5)
-        q_question_5_1 = input(questions.QuestionsQualityLife.QUESTION_5_1)
-        utils.line_break()
-        q_question_6 = input(questions.QuestionsQualityLife.QUESTION_6)
-        utils.line_break()
-        q_question_7 = input(questions.QuestionsQualityLife.QUESTION_7)
+    def quality_issues():
+        utils.clear()
+        print('{}{}B) Qualidade de vida: {}'.
+              format(utils.Color.BOLD, utils.Color.BLUE, utils.Color.END))
+        count_score = 0
 
-        if q_question_7 == 1:
+        for key, value in questions.QuestionsQualityLife.questions_answers_quality_life.items():
+            answer = input(key)
             utils.line_break()
-            q_question_7_1 = input(questions.QuestionsQualityLife.QUESTION_7_1)
+            questions.QuestionsQualityLife.questions_answers_quality_life[key] = answer
 
-        utils.line_break()
-        q_question_8 = input(questions.QuestionsQualityLife.QUESTION_8)
-        utils.line_break()
-        q_question_9 = input(questions.QuestionsQualityLife.QUESTION_9)
-        utils.line_break()
-        q_question_10 = input(questions.QuestionsQualityLife.QUESTION_10)
+            try:
+                count_score += int(answer)
+            except ValueError:
+                pass
 
-        if q_question_10 == 1:
-            q_question_10_1 = input(questions.QuestionsQualityLife.QUESTION_10_1)
-            q_question_10_2 = input(questions.QuestionsQualityLife.QUESTION_10_2)
+        return count_score
 
-        utils.line_break()
-        q_question_11 = input(questions.QuestionsQualityLife.QUESTION_11)
 
-        quality_life_questions = [int(q_question_1), int(q_question_2), int(q_question_3), int(q_question_4),
-                                  int(q_question_5), int(q_question_7), int(q_question_9), int(q_question_10)]
+class Directions:
+    @staticmethod
+    def directions_issues():
+        utils.clear()
+        print('{}{}C) Sentidos: {}'.
+              format(utils.Color.BOLD, utils.Color.BLUE, utils.Color.END))
+        count_score = 0
 
-        quality_life_final_anwser = sum(quality_life_questions)
-        utils.line_break()
-        quality_life_need_research = input('PONTUAÇÂO OBTIDA: %s. A MÁXIMA PARA ESTA CATEGORIA É DE [23 PONTOS]. \n'
-                                           'EXISTE A NECESSIDADE DE INVESTIGAÇÃO? (0) NÃO | (1) SIM -> '
-                                           % str(quality_life_final_anwser))
+        for key, value in questions.QuestionsDirections.questions_answers_directions.items():
+            answer = input(key)
+            utils.line_break()
+            questions.QuestionsDirections.questions_answers_directions[key] = answer
 
-        patient.p_score_quality_life = [quality_life_final_anwser, quality_life_need_research]
+            try:
+                count_score += int(answer)
+            except ValueError:
+                pass
+
+        return count_score
+
+
+class Malnutrition:
+    @staticmethod
+    def malnutrition_issues():
+        utils.clear()
+        print('{}{}D) Desnutrição: {}' .
+              format(utils.Color.BOLD, utils.Color.BLUE, utils.Color.END))
+        count_score = 0
+
+        for key, value in questions.QuestionsMalnutrition.questions_answers_malnutrition.items():
+            answer = input(key)
+            utils.line_break()
+            questions.QuestionsMalnutrition.questions_answers_malnutrition[key] = answer
+
+            try:
+                count_score += int(answer)
+            except ValueError:
+                pass
+
+        return count_score
 
 
 class MultidimensionalEvaluation:
+    def __init__(self):
+        utils.clear()
+        print('{}{} ## Avaliação multidimensional do idoso: {} \n'.
+              format(utils.Color.BOLD, utils.Color.CYAN, utils.Color.END))
+
     @staticmethod
-    def questions_and_answers(patient):
-        attitudes = AttitudesAging()
-        attitudes.attitude_issues(patient)
+    def call_attitudes_aging_score():
+        attitudes_aging = AttitudesAging()
+        return attitudes_aging.attitude_issues()
 
+    @staticmethod
+    def call_quality_life_score():
         quality_life = QualityLife()
-        quality_life.quality_issues(patient)
+        return quality_life.quality_issues()
 
+    @staticmethod
+    def call_directions_score():
+        directions = Directions()
+        return directions.directions_issues()
+
+    @staticmethod
+    def call_malnutrition_score():
+        malnutrition = Malnutrition()
+        return malnutrition.malnutrition_issues()

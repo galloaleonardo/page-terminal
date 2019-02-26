@@ -20,7 +20,8 @@ class Gerontologian(Person):
 
 class Patient(Person):
     def __init__(self, primary_name, last_name, adress, telephone, date_birth,
-                 age, genre, marital_status, scholarity, individual_income,
+                 age, genre, marital_status, scholarity, years_scholarity,
+                 retired, retired_pensioner, paid_work, individual_income,
                  family_income, live_with, have_relegion):
         super().__init__(primary_name, last_name)
         self._adress = adress
@@ -30,6 +31,10 @@ class Patient(Person):
         self._genre = genre
         self._marital_status = marital_status
         self._scholarity = scholarity
+        self.years_scholarity = years_scholarity
+        self.retired = retired
+        self.retired_pensioner = retired_pensioner
+        self.paid_work = paid_work
         self._individual_income = individual_income
         self._family_income = family_income
         self._live_with = live_with
