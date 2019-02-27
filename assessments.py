@@ -148,6 +148,29 @@ class CardiovascularFactors:
         return count_score
 
 
+class MedicationAdministration:
+    @staticmethod
+    def medication_administration_issues():
+        utils.clear()
+        print('{}{}H) Administração de medicamentos: {}' .
+              format(utils.Color.BOLD, utils.Color.BLUE, utils.Color.END))
+        count_score = 0
+
+        for key, value in questions.QuesntionsMedicationAdministration.\
+                questions_answers_medication_administration.items():
+            answer = input(key)
+            utils.line_break()
+            questions.QuesntionsMedicationAdministration. \
+                questions_answers_medication_administration[key] = answer
+
+            try:
+                count_score += int(answer)
+            except ValueError:
+                pass
+
+        return count_score
+
+
 class MultidimensionalEvaluation:
     def __init__(self):
         utils.clear()
@@ -188,3 +211,8 @@ class MultidimensionalEvaluation:
     def call_cardiocascular_factors():
         cardiovascular_factors = CardiovascularFactors()
         return cardiovascular_factors.cardiovascular_factors_issues()
+
+    @staticmethod
+    def call_medication_administration():
+        medication_administration = MedicationAdministration()
+        return medication_administration.medication_administration_issues()

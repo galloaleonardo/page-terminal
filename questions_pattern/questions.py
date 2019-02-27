@@ -140,32 +140,32 @@ class QuestionsDepression:
         '1. De modo geral o(a) senhor(a) está satisfeito com a vida? \n' +
         '[0] = Sim | [1] = Não: ': None,
 
-        '1.1. Se não, por quê? <ENTER> se resposta anterior for [Sim]': None,
+        '1.1. Se não, por quê? <Enter> se resposta anterior for [Sim]': None,
 
         '2. O(a) senhor (a) se sente triste com frequência? \n' +
         '[0] = Sim | [1] = Não: ': None,
 
-        '2.1. Se não, por quê? <ENTER> se resposta anterior for [Sim]': None,
+        '2.1. Se não, por quê? <Enter> se resposta anterior for [Sim]': None,
 
         '3. O(a) senhor(a) abandonou muitas das coisas que fazia ou gostava de fazer? \n' +
         '[0] = Sim | [1] = Não: ': None,
 
-        '3.1. Se não, por quê? <ENTER> se resposta anterior for [Sim]': None,
+        '3.1. Se não, por quê? <Enter> se resposta anterior for [Sim]': None,
 
         '4. O(a) senhor(a) tem medo de que algum mal vá lhe acontecer? \n' +
         '[0] = Sim | [1] = Não: ': None,
 
-        '4.1. Se não, por quê? <ENTER> se resposta anterior for [Sim]': None,
+        '4.1. Se não, por quê? <Enter> se resposta anterior for [Sim]': None,
 
         '5. O(a) Sr.(a) se sente impaciente e agitado(a) com frequência? \n' +
         '[0] = Sim | [1] = Não: ': None,
 
-        '5.1. Se não, por quê? <ENTER> se resposta anterior for [Sim]': None,
+        '5.1. Se não, por quê? <Enter> se resposta anterior for [Sim]': None,
 
         '6. O O(a) Sr.(a) tem dificuldades em concentrar-se? \n' +
         '[0] = Sim | [1] = Não: ': None,
 
-        '6.1. Se não, por quê? <ENTER> se resposta anterior for [Sim]': None
+        '6.1. Se não, por quê? <Enter> se resposta anterior for [Sim]': None
     }
 
 
@@ -199,4 +199,87 @@ class QuestionsCardiovascularFactors:
 
         '8. O(a) senhor(a) pratica exercícios físicos? \n' +
         '[0] = Não | [1] = Sim (<150min/semana) |  [2] = Sim (>150min/semana): ': None
+    }
+
+
+class QuesntionsMedicationAdministration:
+    questions_answers_medication_administration = {
+        '1. Nos últimos 5 anos, algum médico já disse que o(a) senhor(a) tem as seguintes doenças/problemas? \n' +
+        'a. Doença do coração (angina, infarto ou ataque cardíaco): \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'b. Pressão alta/hipertensão (ver RCV): \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'c. Derrame / AVC / Isquemia: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'd. Diabetes Mellitus (ver RCV): \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'e. Tumor maligno / Câncer: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'f. Doenças do pulmão, como bronquite e enfisema: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'g. Depressão: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'h. Incontinência urinária/perda de urina \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'i. Outras? ': None,
+
+        '2. Quantidade de doenças crônicas: ': None,
+
+        '3. Quais são os medicamentos utilizados pelo(a) senhor(a)? ' +
+        '(Solicitar bulas e registrar com letra legível): ': None,
+
+        '4. Quantidade de medicamentos? \n' +
+        '[0] = ≥ 5 | [1] = < 5 | [1] Não se aplica: ': None,
+
+        '5. O(a) senhor(a) sabe para que serve todos os medicamentos que utiliza? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '6. Todos os medicamentos foram prescritos pelo mesmo médico? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '7. O(a) senhor(a) toma os medicamentos de acordo com as orientações médicas? Por quê? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '8. O(a) senhor(a) alguma vez já deixou de tomar os medicamentos? Por quê? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '9. O(a) senhor(a) tem o costume de tomar remédios por conta própria (automedicação)? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '10. Verificar na lista dos critérios de Beers (anexada ao PAGe) ' +
+        'se o(a) idoso(a) toma algum medicamento inapropriado \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'Para calcular o risco para reações adversas, circule e cruze ' +
+        'as informações acima na seguinte tabela: \n \n'
+
+        '╔═════════════════════════════════╗ \n' +
+        '║ USO DE MEDICAMENTO INAPROPRIADO ║ \n' +
+        '╠═════════════════╦═══════╦═══════╣ \n' +
+        '║      Nro de     ║  Não  ║  Sim  ║ \n' +
+        '║   diagnósticos  ║       ║       ║ \n' +
+        '╠═════════════════╬═══════╬═══════╣ \n' +
+        '║        1        ║   18  ║   9   ║ \n' +
+        '╠═════════════════╬═══════╬═══════╣ \n' +
+        '║        2        ║   15  ║   6   ║ \n' +
+        '╠═════════════════╬═══════╬═══════╣ \n' +
+        '║        3        ║   11  ║   2   ║ \n' +
+        '╠═════════════════╬═══════╬═══════╣ \n' +
+        '║        4        ║   7   ║   0   ║ \n' +
+        '╠═════════════════╬═══════╬═══════╣ \n' +
+        '║        5        ║   4   ║   0   ║ \n' +
+        '╚═════════════════╩═══════╩═══════╝ \n' +
+        'Pressione <Enter> para continuar...': None,
+
+        '10.  O(a) idoso(a) utiliza uma quantidade de medicamentos ' +
+        'superior ao valor indicado/circulado na tabela acima? \n' +
+        '[0] = Sim | [1] = Não: ': None
     }

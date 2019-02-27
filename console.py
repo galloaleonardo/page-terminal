@@ -27,6 +27,7 @@ class StartApplication:
         patient._functional_capacity_score = test.call_functional_capacity()
         patient._depression = test.call_depression()
         patient._cardiovascular_factors = test.call_cardiocascular_factors()
+        patient._medication_administration = test.call_medication_administration()
 
         print("{}{}Relação da pontuação obtida: {}".format(Color.BOLD, Color.GREEN, Color.END))
 
@@ -56,6 +57,11 @@ class StartApplication:
 
         patient._is_cardiovascular_factors_score_need_investigation = \
             input('Fatores cardiovasculares: {}. A máxima é de 14 pontos. '.format(patient._cardiovascular_factors) +
+                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
+
+        patient._is_medication_administration_score_need_investigation = \
+            input('Administraçåo de medicamentos: {}. A máxima é de 7 pontos. '.
+                  format(patient._medication_administration) +
                   'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
 
 
