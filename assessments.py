@@ -85,6 +85,69 @@ class Malnutrition:
         return count_score
 
 
+class FunctionalCapacity:
+    @staticmethod
+    def functional_capacity_issues():
+        utils.clear()
+        print('{}{}E) Capacidade funcional: {}' .
+              format(utils.Color.BOLD, utils.Color.BLUE, utils.Color.END))
+        count_score = 0
+
+        for key, value in questions.QuestionsFunctionalCapacity.questions_answers_functional_capacity.items():
+            answer = input(key)
+            utils.line_break()
+            questions.QuestionsFunctionalCapacity.questions_answers_functional_capacity[key] = answer
+
+            try:
+                count_score += int(answer)
+            except ValueError:
+                pass
+
+        return count_score
+
+
+class Depression:
+    @staticmethod
+    def depression_issues():
+        utils.clear()
+        print('{}{}F) Depressão: {}' .
+              format(utils.Color.BOLD, utils.Color.BLUE, utils.Color.END))
+        count_score = 0
+
+        for key, value in questions.QuestionsDepression.questions_answers_depression.items():
+            answer = input(key)
+            utils.line_break()
+            questions.QuestionsDepression.questions_answers_depression[key] = answer
+
+            try:
+                count_score += int(answer)
+            except ValueError:
+                pass
+
+        return count_score
+
+
+class CardiovascularFactors:
+    @staticmethod
+    def cardiovascular_factors_issues():
+        utils.clear()
+        print('{}{}G) Fatores cardiovasculares: {}' .
+              format(utils.Color.BOLD, utils.Color.BLUE, utils.Color.END))
+        count_score = 0
+
+        for key, value in questions.QuestionsCardiovascularFactors.questions_answers_cardiovascular_factors.items():
+            answer = input(key)
+            utils.line_break()
+            questions.QuestionsCardiovascularFactors.questions_answers_cardiovascular_factors[key] = answer
+
+            try:
+                count_score += int(answer)
+            except ValueError:
+                pass
+
+        return count_score
+
+
 class MultidimensionalEvaluation:
     def __init__(self):
         utils.clear()
@@ -110,3 +173,18 @@ class MultidimensionalEvaluation:
     def call_malnutrition_score():
         malnutrition = Malnutrition()
         return malnutrition.malnutrition_issues()
+
+    @staticmethod
+    def call_functional_capacity():
+        functional_capacity = FunctionalCapacity()
+        return functional_capacity.functional_capacity_issues()
+
+    @staticmethod
+    def call_depression():
+        depression = Depression()
+        return depression.depression_issues()
+
+    @staticmethod
+    def call_cardiocascular_factors():
+        cardiovascular_factors = CardiovascularFactors()
+        return cardiovascular_factors.cardiovascular_factors_issues()

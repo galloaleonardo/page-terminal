@@ -110,3 +110,93 @@ class QuestionsMalnutrition:
         'Perímetro da Perna (PP) em cm: \n' +
         '[0] = PP < 31 | [1] = PP ≥ 31: ': None
     }
+
+
+class QuestionsFunctionalCapacity:
+    questions_answers_functional_capacity = {
+        '1. O(a) senhor(a) necessita de ajuda para: ' +
+        '1.1. Verstir-se? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '1.2. Tomar banho? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '1.3. Usar o telefone? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '1.4. Preparar a própria comida? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '1.5. Fazer compras? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '1.6. Usar meios de transporte? \n' +
+        '[0] = Sim | [1] = Não: ': None
+    }
+
+
+class QuestionsDepression:
+    questions_answers_depression = {
+        '1. De modo geral o(a) senhor(a) está satisfeito com a vida? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '1.1. Se não, por quê? <ENTER> se resposta anterior for [Sim]': None,
+
+        '2. O(a) senhor (a) se sente triste com frequência? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '2.1. Se não, por quê? <ENTER> se resposta anterior for [Sim]': None,
+
+        '3. O(a) senhor(a) abandonou muitas das coisas que fazia ou gostava de fazer? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '3.1. Se não, por quê? <ENTER> se resposta anterior for [Sim]': None,
+
+        '4. O(a) senhor(a) tem medo de que algum mal vá lhe acontecer? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '4.1. Se não, por quê? <ENTER> se resposta anterior for [Sim]': None,
+
+        '5. O(a) Sr.(a) se sente impaciente e agitado(a) com frequência? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '5.1. Se não, por quê? <ENTER> se resposta anterior for [Sim]': None,
+
+        '6. O O(a) Sr.(a) tem dificuldades em concentrar-se? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '6.1. Se não, por quê? <ENTER> se resposta anterior for [Sim]': None
+    }
+
+
+class QuestionsCardiovascularFactors:
+    questions_answers_cardiovascular_factors = {
+        '1. O(a) senhor(a) tem histórico familiar (primeiro grau) de DCV (infarto, derrame, angina)? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '2. O(a) senhor(a) tem hipertensão arterial? \n' +
+        '[0] = Sim, mas desconhece os valores de PA | [0] = Sim, mas não controlada (PA>140/90 mmHg), \n' +
+        '[1] = Sim, mas controlada (PA<140/90 mmHg) | [2] = Não: ': None,
+
+        '3. O(a) senhor(a) tem diabetes? \n' +
+        '[0] = Sim, mas desconhece os valores de glicemia | \n' +
+        '[0] = Sim, e não controlada (glicemia jejum > 100 mg/dL) | \n' +
+        '[1] = Sim, mas controlada (glicemia jejum < 100 mg/dL) | [2] = Não: ': None,
+
+        '4. O(a) senhor(a) tem colesterol alterado? \n' +
+        '[0] = Sim, mas desconhece os valores de CT e HDL | \n' +
+        '[0] = Sim, mas não controlado(CT>200 e/ou HDL<60 mg/dL) | \n' +
+        '[1] = Sim, mascontrolado (CT<200 e/ou HDL>60 mg/dL) | [2] = Não: ': None,
+
+        '5. Índice de massa corporal (KG/m2) - Adicione o prefixo [IMC] antes: ': None,
+
+        '6. O(a) senhor(a) é fumante? \n' +
+        '[0] = Sim | [1] = Não, mas já fumou antes | [2] - Não: ': None,
+
+        '7. Na última semana, o(a) senhor(a) ingeriu bebidas alcoólicas? \n' +
+        '[0] = Sim (>2 doses de destilado, 1 taça de vinho ou 2 latas de cerveja por dia) | ' +
+        '[1] = sim (>2 doses de destilado, ou 1 taça de vinho ou 2 latas de cerveja por dia) | [2] = Não': None,
+
+        '8. O(a) senhor(a) pratica exercícios físicos? \n' +
+        '[0] = Não | [1] = Sim (<150min/semana) |  [2] = Sim (>150min/semana): ': None
+    }

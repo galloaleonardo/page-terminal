@@ -24,12 +24,39 @@ class StartApplication:
         patient._quality_life_score = test.call_quality_life_score()
         patient._directions_score = test.call_directions_score()
         patient._malnutrition_score = test.call_malnutrition_score()
+        patient._functional_capacity_score = test.call_functional_capacity()
+        patient._depression = test.call_depression()
+        patient._cardiovascular_factors = test.call_cardiocascular_factors()
 
-        print("{}{}PONTUAÇÃO OBTIDA: {}".format(Color.BOLD, Color.GREEN, Color.END))
-        print("Atitudes em relação a velhice e envelhecimento: {}".format(patient._attitudes_aging_score))
-        print("Qualidade de vida: {}".format(patient._quality_life_score))
-        print("Sentidos: {}".format(patient._directions_score))
-        print("Desnutrição: {}".format(patient._malnutrition_score))
+        print("{}{}Relação da pontuação obtida: {}".format(Color.BOLD, Color.GREEN, Color.END))
+
+        patient._is_attitudes_aging_score_need_score = \
+            input('Atitudes em relação a velhice e envelhecimento: {}'.format(patient._attitudes_aging_score) +
+                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
+
+        patient._is_quality_life_score_need_investigation = \
+            input('Qualidade de vida: {}. A máxima é de 23 pontos.'.format(patient._quality_life_score) +
+                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
+
+        patient._is_directions_score_need_investigation = \
+            input('Sentidos: {}. A máxima é de 9 pontos. '.format(patient._directions_score) +
+                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
+
+        patient._is_malnutrition_score_need_investigation = \
+            input('Desnutrição: {}. A máxima é de 14/12 pontos. '.format(patient._malnutrition_score) +
+                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
+
+        patient._is_functional_capacity_score_need_investigation = \
+            input('Capacidade funcional: {}. A máxima é de 6 pontos. '.format(patient._functional_capacity_score) +
+                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
+
+        patient._is_depression_score_need_investigation = \
+            input('Depressão: {}. A máxima é de 6 pontos. '.format(patient._depression) +
+                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
+
+        patient._is_cardiovascular_factors_score_need_investigation = \
+            input('Fatores cardiovasculares: {}. A máxima é de 14 pontos. '.format(patient._cardiovascular_factors) +
+                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
 
 
 class GerontologianPeople:
