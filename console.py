@@ -1,7 +1,9 @@
 from persons import Gerontologian, Patient
+
 from utils.headers import Headers
 from utils.utils import Color, clear
 from assessments import MultidimensionalEvaluation
+from questions_pattern import questions
 import time
 
 
@@ -20,14 +22,41 @@ class StartApplication:
     @staticmethod
     def call_multidimensional_test(gerontologist, patient):
         test = MultidimensionalEvaluation()
-        patient._attitudes_aging_score = test.call_attitudes_aging_score()
-        patient._quality_life_score = test.call_quality_life_score()
-        patient._directions_score = test.call_directions_score()
-        patient._malnutrition_score = test.call_malnutrition_score()
-        patient._functional_capacity_score = test.call_functional_capacity()
-        patient._depression = test.call_depression()
-        patient._cardiovascular_factors = test.call_cardiocascular_factors()
-        patient._medication_administration = test.call_medication_administration()
+        patient._attitudes_aging_score = \
+            test.call_tests_score(questions.QuestionsAttitudesAging.TITLE,
+                                  questions.QuestionsAttitudesAging.questions_answers_attitudes_agging)
+
+        patient._quality_life_score = test.call_tests_score(questions.QuestionsQualityLife.TITLE,
+                                                            questions.QuestionsQualityLife.
+                                                            questions_answers_quality_life)
+
+        patient._directions_score = test.call_tests_score(questions.QuestionsDirections.TITLE,
+                                                          questions.QuestionsDirections.questions_answers_directions)
+
+        patient._malnutrition_score = test.call_tests_score(questions.QuestionsMalnutrition.TITLE,
+                                                            questions.QuestionsMalnutrition.
+                                                            questions_answers_malnutrition)
+
+        patient._functional_capacity_score = test.call_tests_score(questions.QuestionsFunctionalCapacity.TITLE,
+                                                                   questions.QuestionsFunctionalCapacity.
+                                                                   questions_answers_functional_capacity)
+
+        patient._depression = test.call_tests_score(questions.QuestionsDepression.TITLE,
+                                                    questions.QuestionsDepression.questions_answers_depression)
+
+        patient._cardiovascular_factors = test.call_tests_score(questions.QuestionsCardiovascularFactors.TITLE,
+                                                                questions.QuestionsCardiovascularFactors.
+                                                                questions_answers_cardiovascular_factors)
+
+        patient._medication_administration = test.call_tests_score(questions.QuesntionsMedicationAdministration.TITLE,
+                                                                   questions.QuesntionsMedicationAdministration.
+                                                                   questions_answers_medication_administration)
+
+        patient._environment = test.call_tests_score(questions.QuestionsEnvironment.TITLE,
+                                                     questions.QuestionsEnvironment.questions_answers_environment)
+
+        patient._falls = test.call_tests_score(questions.QuestionsFalls.TITLE,
+                                              questions.QuestionsFalls.questions_answers_falls)
 
         print("{}{}Relação da pontuação obtida: {}".format(Color.BOLD, Color.GREEN, Color.END))
 
@@ -64,11 +93,21 @@ class StartApplication:
                   format(patient._medication_administration) +
                   'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
 
+        patient._is_environment_need_investigation = \
+            input('Ambiente: {}. A máxima é de 18 pontos. '.
+                  format(patient._environment) +
+                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
+
+        patient._is_falls_need_investigation = \
+            input('Quedas: {}. A máxima é de 17 pontos. '.
+                  format(patient._falls) +
+                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
+
 
 class GerontologianPeople:
     @staticmethod
     def input_gerontologist():
-        print('{}{} ## Ficha cadastral: {} \n'.format(Color.BOLD, Color.CYAN, Color.END))
+        print('{}{}## Ficha cadastral: {} \n'.format(Color.BOLD, Color.CYAN, Color.END))
         inpt_primary_name = input('Gerontólogo(a), digite o seu nome: ').capitalize()
         inpt_last_name = input('Último nome: ').capitalize()
         inpt_num_membership_abg = input('Número de associação ABG (Associação Brasileira de Gerontologia): ')
@@ -90,7 +129,7 @@ class PatientPeople:
     @staticmethod
     def input_patient():
         clear()
-        print('{}{} ## Dados de identificação do paciente: {} \n'.format(Color.BOLD, Color.CYAN, Color.END))
+        print('{}{}## Dados de identificação do paciente: {} \n'.format(Color.BOLD, Color.CYAN, Color.END))
         inpt_first_name = input('Primeiro nome: ').capitalize()
         inpt_last_name = input('Segundo nome: ').capitalize()
         inpt_adress = input('Endereço: ').capitalize()

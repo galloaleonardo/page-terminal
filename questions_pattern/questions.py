@@ -1,4 +1,6 @@
 class QuestionsAttitudesAging:
+    TITLE = 'A) Atitudes em relação a velhice e envelhecimento: '
+
     questions_answers_attitudes_agging = {
         '1. Que idade o(a) senhor(a) sente ter? Por quê? ': None,
         '2. Existe pontos positivos e negativos presentes nessa fase da vida? Quais? ': None,
@@ -8,6 +10,8 @@ class QuestionsAttitudesAging:
 
 
 class QuestionsQualityLife:
+    TITLE = 'B) Qualidade de vida: '
+
     questions_answers_quality_life = {
         '1. Em geral, o(a) senhor(a) se considera uma pessoa: \n' +
         '[0] = Infeliz | [1] = Não muito feliz | [2] = Feliz | [3] = Muito Feliz: ': None,
@@ -61,6 +65,8 @@ class QuestionsQualityLife:
 
 
 class QuestionsDirections:
+    TITLE = 'C) Sentidos: '
+
     questions_answers_directions = {
         '1. O(a) senhor(a) tem dificuldade para ver TV, ler jornal ou fazer qualquer outra ' +
         'atividade devido a problemas visuais? Se sim, por quê? ' +
@@ -86,6 +92,8 @@ class QuestionsDirections:
 
 
 class QuestionsMalnutrition:
+    TITLE = 'D) Desnutrição: '
+
     questions_answers_malnutrition = {
         '1. O(a) senhor(a) acredita ter algum problema nutricional? \n' +
         '[0] = Sim, estou desnutrido | [1] = Não sei dizer | [2] = Não tenho problemas: ': None,
@@ -113,6 +121,8 @@ class QuestionsMalnutrition:
 
 
 class QuestionsFunctionalCapacity:
+    TITLE = 'E) Capacidade funcional: '
+
     questions_answers_functional_capacity = {
         '1. O(a) senhor(a) necessita de ajuda para: ' +
         '1.1. Verstir-se? \n' +
@@ -136,6 +146,8 @@ class QuestionsFunctionalCapacity:
 
 
 class QuestionsDepression:
+    TITLE = 'F) Depressão: '
+
     questions_answers_depression = {
         '1. De modo geral o(a) senhor(a) está satisfeito com a vida? \n' +
         '[0] = Sim | [1] = Não: ': None,
@@ -170,6 +182,8 @@ class QuestionsDepression:
 
 
 class QuestionsCardiovascularFactors:
+    TITLE = 'G) Fatores cardiovasculares: '
+
     questions_answers_cardiovascular_factors = {
         '1. O(a) senhor(a) tem histórico familiar (primeiro grau) de DCV (infarto, derrame, angina)? \n' +
         '[0] = Sim | [1] = Não: ': None,
@@ -203,6 +217,8 @@ class QuestionsCardiovascularFactors:
 
 
 class QuesntionsMedicationAdministration:
+    TITLE = 'H) Administração de medicamentos: '
+
     questions_answers_medication_administration = {
         '1. Nos últimos 5 anos, algum médico já disse que o(a) senhor(a) tem as seguintes doenças/problemas? \n' +
         'a. Doença do coração (angina, infarto ou ataque cardíaco): \n' +
@@ -282,4 +298,138 @@ class QuesntionsMedicationAdministration:
         '10.  O(a) idoso(a) utiliza uma quantidade de medicamentos ' +
         'superior ao valor indicado/circulado na tabela acima? \n' +
         '[0] = Sim | [1] = Não: ': None
+    }
+
+
+class QuestionsEnvironment:
+    TITLE = 'I) Ambiente: '
+
+    questions_answers_environment = {
+        '1. Ambiente Interno: Na casa do(a) senhor(a)... \n' +
+        'a. Os móveis são estáveis? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'b. Há móveis/objetos/fios/tapetes/animais nas áreas de circulação? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'c. O piso é escorregadio (ex. encerado)? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'd. A casa do(a) senhor(a) possui escadas/degraus? Se sim, ' +
+        'há corrimãos em ambos os lados da escada? (Pontue 1, caso não tenha escadas/degraus na casa). \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'e. As escadas/degraus são iluminados adequadamente durante a noite? (idem) \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'f. Os degraus são adequados (tamanho, rebordos, largura e padronagem etc)? (Idem) \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'g. Há tapetes antiderrapantes (fora e dentro do box)? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '2. Comportamento de Risco... \n' +
+        'a. O(a) senhor(a) costuma subir em banquetas para alcançar objetos altos? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'b. O(a) senhor(a) acende as luzes quando levanta-se à noite? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'c. O(a) senhor(a) utiliza calçados seguros e adequados ' +
+        '(solado antiderrapante, bem ajustados e firmes no pé, sem saltos etc) \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '3. Ambiente Externo: O(a) senhor(a) está satisfeito com.. \n' +
+        'a. O acesso ao transporte público no seu bairro? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'b. O tempo de transporte entre casa/trabalho/escola/hospital? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'c. O acesso ao comércio no seu bairro? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'd. A facilidade e prazer em andar a pé nele/com cadeira de rodas/bengala/andador? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'e. O acesso à diversão no seu bairro (restaurantes, cinema, clubes etc.) \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'f. A segurança quanto à ameaça da criminalidade no seu bairro? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'g. O barulho do tráfego no seu bairro? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'h. O local (bairro) que tem para viver? \n' +
+        '[0] = Sim | [1] = Não: ': None
+    }
+
+
+class QuestionsFalls:
+    TITLE = 'J) Quedas: '
+
+    questions_answers_falls = {
+        '1. Histórico de quedas: O(a) senhor(a) sofreu alguma queda nos últimos 12 meses? ' +
+        '(se não, vá para a questão 3). Quantas? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '2. O que o (a) senhor(a) estava fazendo quando sofreu essa(s) queda(s) ' +
+        '(investigar atividade realizada, local, horário do dia, tipo de calçado, riscos ambientais etc)?': None,
+
+        '3. Força (MMII): Avalie se o(a) idoso(a) consegue levantar-se de uma cadeira sem ajuda \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '4. Equilíbrio: Avalie se o(a) idoso(a) consegue permanecer em 1 perna, ' +
+        'sem apoio dos membros superiores, durante 5 segundos. \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '5. Baseado nos itens anteriores preenchidos neste e em todos os ' +
+        'outros domínios, identifique se o idoso apresenta/utiliza: \n' +
+        'a. Idade > 80 anos: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'b. Sexo feminino: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'c. Histórico de quedas: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'd. Histórico de fraturas: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'e. ↓ equilíbrio: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'f. ↓ força (MMII): \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'g. Comprometimento AVDs: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'h. Alterações cognitivas: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'i. Riscos domésticos/comportamento de risco: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'j. AVE prévio: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'k. Déficit visual: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'l. Inatividade: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'm. Dispositivo de auxílio de marcha: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        'n. Medicamentos em uso: anestésicos, anti-histamínicos, catárticos, diuréticos,  anti-hipertensivos, ' +
+        'anticonvulsivantes, benzodiazepínicos, hipoglicemiantes, psicotrópicos, sedativos/hipnóticos \n' +
+        '[2] = Nenhum | [1] = De 1 = De 1 a 2 | [0] = ≥ 3: ': None,
+
+        'o. Outras doenças predisponentes: hipertensão, tontura/vertigem, Parkinson, amputação de membros ' +
+        'inferiores, convulsões, artrite, osteoporose, incontinência, diabetes, neuropatia, hipotensão postural \n' +
+        '[2] = Nenhum | [1] = De 1 = De 1 a 2 | [0] = ≥ 3: ': None
     }
