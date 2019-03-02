@@ -433,3 +433,142 @@ class QuestionsFalls:
         'inferiores, convulsões, artrite, osteoporose, incontinência, diabetes, neuropatia, hipotensão postural \n' +
         '[2] = Nenhum | [1] = De 1 = De 1 a 2 | [0] = ≥ 3: ': None
     }
+
+
+class QuestionsViolence:
+    TITLE = 'K) Violência: '
+
+    questions_answers_violence = {
+        '1. O(a) senhor (a) tem medo de alguém próximo/do seu convívio? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '2. O(a) senhor(a) se sente só ou abandonado? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '3. Alguém já obrigou o(a) senhor(a) a fazer coisas que o(a) senhor(a) não queria fazer? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '4. Alguém tem gritado com o(a) senhor(a) de forma que se sinta constrangido(a) ou mal consigo mesmo(a)? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '5. Alguém tem batido ou agredido o(a) senhor(a) fisicamente? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '6. Alguém tem usado o dinheiro do(a) senhor(a) sem a sua autorização? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '7. O(a) senhor(a) tem passado necessidade de roupas, alimentação, medicamentos etc? \n' +
+        '[0] = Sim | [1] = Não: ': None
+    }
+
+
+class QuestionsSocialVulnerability:
+    TITLE = 'L) Vulnerabilidade social: '
+
+    questions_answers_social_vulnerability = {
+        '1. O(a) senhor(a) tem: \n' +
+        'a) Quantos irmãos? ': None,
+
+        'b) Quantos filhos? ': None,
+
+        'c) Quantos netos? ': None,
+
+        '2. Com que frequência o(a) senhor(a) encontra familiares e/ou amigos? \n' +
+        '[0] = Nunca | [1] = Raramente | [2] = Frequentemente | [3] = Sempre: ': None,
+
+        '3. Com que frequência o(a) senhor(a) pode contar com algum ' +
+        'familiar e/ou amigo para ajudá-lo a resolver problemas? \n' +
+        '[0] = Nunca | [1] = Raramente | [2] = Frequentemente | [3] = Sempre: ': None,
+
+        '4. Com que frequência o(a) senhor(a) participa de decisões importantes da sua família? \n' +
+        '[0] = Nunca | [1] = Raramente | [2] = Frequentemente | [3] = Sempre: ': None,
+
+        '5. O(a) senhor(a) se sente satisfeito(a) com o relacionamento entre os seus familiares? \n' +
+        '[0] = Muito insatisfeito | [1] = Insatisfeito | [2] = Satisfeito | [3] = Muito satisfeito: ': None,
+
+        '6. Renda familiar (ver nos dados de identificação): \n' +
+        '[0] = ≤ 1 SM | [1] = 1,1 a 3 SM o| [2] = 3,1 a 5 SM | [3] => 5 SM: ': None,
+
+        '7. O (a) senhor(a) tem dinheiro suficiente para satisfazer suas necessidades? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '8. Com que frequência o (a) senhor(a) participa de eventos sócio-culturais, ' +
+        'tais como: peças de teatro, cinema, universidade aberta a terceira idade, '+
+        'centro de convivência, festas, ligados à religião, etc).': None,
+        '[0] = Nunca | [1] = Raramente | [2] = Frequentemente | [3] = Sempre: ': None,
+
+        '9. O (a) senhor(a) recebe visitas de profissionais da saúde em sua casa? \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '10. O (a) senhor(a) foi a quantas consultas médicas no último ano? \n' +
+        '(Se nenhuma, investigar o motivo)'
+        '[0] = Nenhuma | [1] = 1 - 3 | [2] => 3: ': None,
+
+        '11. Número de doenças e/ou problemas (ver Adm. Medicamentos): \n' +
+        '[0] = > 5 | [1] = 1- 4 | [2] = 0: ': None
+    }
+
+
+class QuestionsFragility:
+    TITLE = 'M) Fragilidade: '
+
+    questions_answers_fragility = {
+        'Baseado nos itens anteriores identifique se o idoso apresenta (sinais ou risco): \n' +
+        '1. Idade avançada (>80 anos): \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '2. Desnutrição (score total < 7 ou pontuar 0 na questão 4 do domínio): \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '3. ↓ Capacidade funcional (score total ≤ 4): \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '4. Incontinência (relatar perda): \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '5. Depressão (score total < 4 ou diagnóstico médico): \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '6. Deficit cognitivo (score total ≤ 11): \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '7. > 2 Doenças crônicas: \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '8. Polifarmácia (no de medicamentos ≥ 5): \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '9. instabilidade postural ou ↓força (pontuar “não” no item 4 ou 5 domínio quedas): \n' +
+        '[0] = Sim | [1] = Não: ': None,
+
+        '10. ↓ Suporte social e familiar (morar sozinho(a), pontuar 0 no questão ' +
+        '3 do domínio vulnerabilidade social ou score total ≤ 12): \n' +
+        '[0] = Sim | [1] = Não: ': None
+    }
+
+
+class QuestionsGerontologistEvaluation:
+    TITLE = 'N) Avaliação do(a) gerontólogo(a): '
+
+    questions_answers_gerontologist_evaluation = {
+        '1. Digite sua avaliação: \n': None
+    }
+
+
+class QuestionsPlanningActions:
+    TITLE = 'O) Planejamento das açōes: '
+
+    questions_answers_planning_actions = {
+        '1. Identificação das Demandas/Problemas (listes as demandas/problemas ' +
+        'identificadas na avaliação de acordo com a ordem de prioridade. ' +
+        'Lembre-se de verificar se as prioridades da equipe são compatíveis ' +
+        'com as prioridades do idoso/família): \n': None,
+        
+        '2. Estabelecimento das Metas (estipule as metas a curto, médio e longo ' +
+        'prazos para cada problema ou demanda identificada no item anterior): \n': None,
+
+        '3. Organização das Ações e dos Serviços (especifique as características ' +
+        'das ações e dos serviços necessários para que a pessoa idosa alcance as ' +
+        'metas estipuladas no item anterior – exemplo: número de visitas domiciliares, ' +
+        'agendamento de consultas, intervenções, tratamentos, encaminhamentos, etc.): \n': None
+    }

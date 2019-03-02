@@ -17,91 +17,14 @@ class StartApplication:
     def register_people():
         gerontologist = GerontologianPeople.input_gerontologist()
         patient = PatientPeople.input_patient()
-        StartApplication.call_multidimensional_test(gerontologist, patient)
+        StartApplication.call_multidimensional_test()
 
     @staticmethod
-    def call_multidimensional_test(gerontologist, patient):
+    def call_multidimensional_test():
         test = MultidimensionalEvaluation()
-        patient._attitudes_aging_score = \
-            test.call_tests_score(questions.QuestionsAttitudesAging.TITLE,
-                                  questions.QuestionsAttitudesAging.questions_answers_attitudes_agging)
-
-        patient._quality_life_score = test.call_tests_score(questions.QuestionsQualityLife.TITLE,
-                                                            questions.QuestionsQualityLife.
-                                                            questions_answers_quality_life)
-
-        patient._directions_score = test.call_tests_score(questions.QuestionsDirections.TITLE,
-                                                          questions.QuestionsDirections.questions_answers_directions)
-
-        patient._malnutrition_score = test.call_tests_score(questions.QuestionsMalnutrition.TITLE,
-                                                            questions.QuestionsMalnutrition.
-                                                            questions_answers_malnutrition)
-
-        patient._functional_capacity_score = test.call_tests_score(questions.QuestionsFunctionalCapacity.TITLE,
-                                                                   questions.QuestionsFunctionalCapacity.
-                                                                   questions_answers_functional_capacity)
-
-        patient._depression = test.call_tests_score(questions.QuestionsDepression.TITLE,
-                                                    questions.QuestionsDepression.questions_answers_depression)
-
-        patient._cardiovascular_factors = test.call_tests_score(questions.QuestionsCardiovascularFactors.TITLE,
-                                                                questions.QuestionsCardiovascularFactors.
-                                                                questions_answers_cardiovascular_factors)
-
-        patient._medication_administration = test.call_tests_score(questions.QuesntionsMedicationAdministration.TITLE,
-                                                                   questions.QuesntionsMedicationAdministration.
-                                                                   questions_answers_medication_administration)
-
-        patient._environment = test.call_tests_score(questions.QuestionsEnvironment.TITLE,
-                                                     questions.QuestionsEnvironment.questions_answers_environment)
-
-        patient._falls = test.call_tests_score(questions.QuestionsFalls.TITLE,
-                                              questions.QuestionsFalls.questions_answers_falls)
-
+        test.set_categories()
         print("{}{}Relação da pontuação obtida: {}".format(Color.BOLD, Color.GREEN, Color.END))
-
-        patient._is_attitudes_aging_score_need_score = \
-            input('Atitudes em relação a velhice e envelhecimento: {}'.format(patient._attitudes_aging_score) +
-                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
-
-        patient._is_quality_life_score_need_investigation = \
-            input('Qualidade de vida: {}. A máxima é de 23 pontos.'.format(patient._quality_life_score) +
-                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
-
-        patient._is_directions_score_need_investigation = \
-            input('Sentidos: {}. A máxima é de 9 pontos. '.format(patient._directions_score) +
-                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
-
-        patient._is_malnutrition_score_need_investigation = \
-            input('Desnutrição: {}. A máxima é de 14/12 pontos. '.format(patient._malnutrition_score) +
-                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
-
-        patient._is_functional_capacity_score_need_investigation = \
-            input('Capacidade funcional: {}. A máxima é de 6 pontos. '.format(patient._functional_capacity_score) +
-                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
-
-        patient._is_depression_score_need_investigation = \
-            input('Depressão: {}. A máxima é de 6 pontos. '.format(patient._depression) +
-                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
-
-        patient._is_cardiovascular_factors_score_need_investigation = \
-            input('Fatores cardiovasculares: {}. A máxima é de 14 pontos. '.format(patient._cardiovascular_factors) +
-                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
-
-        patient._is_medication_administration_score_need_investigation = \
-            input('Administraçåo de medicamentos: {}. A máxima é de 7 pontos. '.
-                  format(patient._medication_administration) +
-                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
-
-        patient._is_environment_need_investigation = \
-            input('Ambiente: {}. A máxima é de 18 pontos. '.
-                  format(patient._environment) +
-                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
-
-        patient._is_falls_need_investigation = \
-            input('Quedas: {}. A máxima é de 17 pontos. '.
-                  format(patient._falls) +
-                  'Paciente possui necessidade de investigação? [0] Sim | [1] Não: ')
+        test.set_gategory_need_investigation()
 
 
 class GerontologianPeople:

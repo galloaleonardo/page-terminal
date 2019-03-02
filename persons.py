@@ -1,3 +1,6 @@
+from questions_pattern import questions
+
+
 class Person:
     def __init__(self, primary_name, last_name):
         self._primary_name = primary_name
@@ -39,4 +42,5 @@ class Patient(Person):
         self._family_income = family_income
         self._live_with = live_with
         self._have_religion = have_relegion
+        
 
