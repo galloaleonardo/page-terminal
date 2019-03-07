@@ -4,6 +4,7 @@ from utils.headers import Headers
 from utils.utils import Color, clear
 from assessments import MultidimensionalEvaluation
 from questions_pattern import questions
+from bullet import Bullet, ScrollBar
 import time
 
 
@@ -35,7 +36,12 @@ class GerontologianPeople:
         inpt_last_name = input('Último nome: ').capitalize()
         inpt_num_membership_abg = input('Número de associação ABG (Associação Brasileira de Gerontologia): ')
         inpt_service_institution = input('Serviço/Instituíção: ').capitalize()
-        inpt_is_elderly_interviewee = input('O entrevistado é o próprio idoso? (S)/(N): ')
+
+        inpt_is_elderly_interviewee_aux = ScrollBar('O entrevistado é o próprio idoso?: ', choices=['Sim', 'Não'],
+                                                    indent=0, margin=2, pointer="★", pad_right=5)
+
+        inpt_is_elderly_interviewee = inpt_is_elderly_interviewee_aux.launch()
+
         inpt_evaluation_date = time.strftime("%d/%m/%Y")
 
         inpt_is_elderly_interviewee = (1 if (inpt_is_elderly_interviewee.upper() == 'S') else 0)
@@ -59,7 +65,12 @@ class PatientPeople:
         inpt_telephone = input('Telefone: ')
         inpt_date_birth = input('Data de nascimento (DD/MM/AAAA): ')
         inpt_age = input('Idade: ').capitalize()
-        inpt_genre = input('Gênero - Feminino (F) | Masculino (M) | Prefiro não dizer (O): ')
+
+        inpt_genre_aux = ScrollBar(prompt='Gênero: ', choices=['Feminino', 'Masculino', 'Prefiro não dizer'],
+                                   indent=0, margin=2, pointer="★", pad_right=5)
+
+        inpt_genre = inpt_genre_aux.launch()
+
         inpt_marital_status = input('Estado civíl: ').capitalize()
         inpt_scholarity = input('Escolaridade: ').capitalize()
         inpt_years_scholarity = input('De acordo com sua escolaridade, o(a) senhor(a) estudou,'
